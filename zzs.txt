@@ -1,0 +1,12 @@
+所有的版本控制系统，其实只能跟踪文本文件的改动，比如txt文件，网页，所有的程序代码等等，Git也不例外
+初始化一个Git仓库，使用git init 命令	
+添加文件到仓库分两步
+ Git add <file> 注意可反复多次使用添加多个文件。
+Git commit -m <message> 命令完成。
+HEAD指向的版本就是当前版本，因此Git允许我们在版本的历史之间穿梭，使用命令 git reset  --hard commit_id
+穿梭前，用 git log 查看提交历史，以便确定要回退到哪个版本。
+要重返未来，用 git  reflog 查看命令历史，以便确定要回到未来的那个版本。
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步，真是太方便了！
